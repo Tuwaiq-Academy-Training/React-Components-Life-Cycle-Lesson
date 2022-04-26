@@ -1,1 +1,1 @@
-# React-Components-Life-Cycle-Hooks-Lesson
+# React-Components-Life-Cycle-Lesson
