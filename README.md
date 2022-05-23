@@ -87,4 +87,76 @@
     componentWillUnmount() {
       window.removeEventListener('resize', this.handleResize);
     }
+# React-Hooks-Lesson
+React hooks
+لنناقش بعض الآسباب لآستخدام Hooks عند استخدامنا لآي من Function components او  class components
+نحتاج للمرور بعدد من الحالات والتي تسمى بدورة الحياة او lifecycle  وهي ماتسمح لنا بالتحكم بالحدث المتواجد لدينا 
+والتغيرر على الحالة الاصلية سواءً كان بتحديثها او حذفها ولكي نستطيع  التعامل معها قمنا بإنشاء مايسمى بالـhooks 
+
+
+useState:
+
+يتم استخدام هذه الخاصية حين نحتاج لتغيير الحالة وإقامة التعديلات عليها حيث تم استخدام مايسمى بـsetState وفي هذه الحالة يتم اخذ القيمة كمدخلات اساسية للحالة . وتقوم ايضاً بإعادته كـarray
+اذاٍ يُمكننا القول اننا نستخدمها لتحديث القيم.
+
+وكما نرى في المثال انه يٌمكننا استخدا الـuseSet في تحديث حالة العداد
+حيث يجب علينا اولاً ان انعمل لها اضافة import في بداية الملف.
+
+
+    import React, { useState } from 'react';
+    
+    function Example() {
+    // تم تعريف حالة جديدة عندما نقوم بإستدعاء العداد
+      const [count, setCount] = useState(0);
+      return (
+        <div>
+          <p>You clicked {count} times</p>
+          <button onClick={() => setCount(count + 1)}>
+            Click me
+          </button>
+        </div>
+      );
+    }
+
+لقد تم استدعاء الـhooks  هُنا وهو عبارة عن useState داخل مكون الـfunction
+حيث انها تظهر لك الحالة الاولية والـfunction التي تسمح لك بتحديثها .
+
+
+useEffect:
+
+
+    import React, { useState, useEffect } from 'react';
+    
+    function Example() {
+      const [count, setCount] = useState(0);
+    
+      // Similar to componentDidMount and componentDidUpdate:
+      useEffect(() => {
+        // Update the document title using the browser API
+        document.title = `You clicked ${count} times`;
+      });
+    
+      return (
+        <div>
+          <p>You clicked {count} times</p>
+          <button onClick={() => setCount(count + 1)}>
+            Click me
+          </button>
+        </div>
+      );
+    }
+
+كما هو موضح وتكملة للمثال السابق قمنا بإضافة تآثير خاص له وهو النص ماقبل التعداد وسيكون ظاهر في الصفحة بشكل دائم
+ونستطيع القول ان useEffect هي عبارة عن الـlifecycle فبعكس الـclass كنا نستخدم ثلاث حالات لوصف المشروع وهي :
+componentWillUnmount
+componentDidUpdate
+componentDidMount
+وتم اختصارها جميعاً في الـfunction component الى useEffect
+
+
+
+useMemo:
+    const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+لقد قمنا بإنشاء دالة وتمرير مصفوفة من خلالها وعند حدوث اي تغيير على المدخلات سيقوم هذا التآثير بحساب قيمتها وقد تعتقد انها مشابهة لـuseEffect الا ان الـuseMemo لاتُحدث اي تغيير الى عند حدوث تغيير على الحالة المُعطاة لها.
 
