@@ -156,7 +156,8 @@ componentDidMount
 
 
 useMemo:
-     const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+    const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 لقد قمنا بإنشاء دالة وتمرير مصفوفة من خلالها وعند حدوث اي تغيير على المدخلات سيقوم هذا التآثير بحساب قيمتها وقد تعتقد انها مشابهة لـuseEffect الا ان الـuseMemo لاتُحدث اي تغيير الى عند حدوث تغيير على الحالة المُعطاة لها.
 
