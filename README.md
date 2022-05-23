@@ -87,7 +87,8 @@
     componentWillUnmount() {
       window.removeEventListener('resize', this.handleResize);
     }
-# React-Hooks-Lesson
+# React-Hooks
+
 React hooks
 لنناقش بعض الآسباب لآستخدام Hooks عند استخدامنا لآي من Function components او  class components
 نحتاج للمرور بعدد من الحالات والتي تسمى بدورة الحياة او lifecycle  وهي ماتسمح لنا بالتحكم بالحدث المتواجد لدينا 
