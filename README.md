@@ -1,5 +1,16 @@
 # React-Components-Life-Cycle-Lesson# دورة حياة المكونات | Component Lifecycle
 
+
+# سوف نتعلم في هذا الدرس :
+* دورة حياة المكون 
+* التعامل مع الـclass-component
+* التعامل مع الـfunction-component
+* التعرف على الـhooks
+
+
+
+
+
 كل component يمر بعدد من المراحل ابتداء من وقت تكوينه أو تحديثة إلى حذفه أو تحديثه، وهي ثلاث مراحل رئيسية Mounting و Updating و Unmounting وكل مرحلة من هذهِ المراحل تحتوي على methods خاصة بها يتم استدعائها في تلك المرحلة بترتيب معين حيث أنها تمكنك من التحكم في تحديث state و UI بشكل أكبر، سنتعلم في هذا الدرس lifecycle الخاصة بمكون class component.
 
 
